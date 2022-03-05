@@ -1,68 +1,83 @@
 .App {
-  text-align: center;
+  background: rgb(157, 193, 131);
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.header {
+  height: 6rem;
+  width: 100%;
+  border-bottom: 2px solid white;
+  display: flex;
+  align-items: center;
+  padding: 0.15rem;
+  background: rgba(55, 102,35);
 }
 
-.App-logo {
-  height: 38vmin;
-  pointer-events: none;
+.title {
+  color: white;
+  font-weight: bold;
+  font-size: 3rem;
+  margin-left: 0.5rem;
+  flex-direction: row;
   display: flex;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+.search-bar {
+  height: 4rem;
+  flex-direction: row;
+  margin-top: 5px;
+  width: 50vw;
+  margin-left: 50px;
+  justify-content: flex-end;
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.search-icon {
   display: flex;
   flex-direction: row;
-  left: 10 rem;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;  
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.searchbar {
-  height: 80px;
-  width: 100vw;
-  display: flex;
-  align-items: relative;
-  justify-content: right;
-  margin-left: -15px;
-  margin-top: 10px;
-
-}
-.searchbar button {
+  height: 50px;
+  width: 8%;
   margin-left: 10px;
   height: 55px;
-  display: flex;
-  position: relative;
+  justify-content: flex-end;
 
 }
 
 .camera {
-  margin-left: 90px;
-  height: 55px;
   display: flex;
-  position: relative;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
   
 }
-.gifs img {
-  height: 200px;
+
+.footer {
+  height: 4rem;
+  width: 100%;
+  border-top: 2px solid white;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  background: rgba(55, 102,35, 0.3);
+  position: relative;
+}
+
+.trash-icon{
+  height: 3rem;
+  width: 100%;
+}
+
+.take-picture-icon{
+  height: 3rem;
+  width: 100%;
+}
+
+.okay-icon{
+  height: 3rem;
+  width: 100%;
 }
