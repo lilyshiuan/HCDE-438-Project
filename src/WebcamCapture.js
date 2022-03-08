@@ -50,10 +50,7 @@ export default function WebcamCapture() {
           onClick={capture} 
           />
 
-
         <FiCheckCircle className="okay-icon" size="small" />
-        </div>
-
     </div>
   );
 }
