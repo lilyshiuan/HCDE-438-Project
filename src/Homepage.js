@@ -13,7 +13,7 @@ import Results from "./Results";
 //this component is what the user sees when they first open the app, contains the header, 
 // screen, and footer
 
-export default function Homepage() {
+export default function Homepage(props) {
 
   const [text, setText] = useState("");
   const [results, setResults] = useState(false)
@@ -36,6 +36,8 @@ return (
                 id="search-icon" 
                 variant="outlined"
                 onChange={(e) => setText(e.target.value)}
+                onClick={()=> props.setResults(true)}
+
               />
       </header>
 
