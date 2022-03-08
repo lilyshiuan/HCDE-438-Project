@@ -9,13 +9,14 @@ import { FiCheckCircle} from "react-icons/fi";
 
 const videoConstraints = {
   width: 1080,
-  height: 560,
+  height: 650,
   facingMode: "user",
 };
 
-export default function WebcamCapture() {
+export default function WebcamCapture(props) {
   const webcamRef = React.useRef(null);
-  const [picture, setPicture] = useState(null)
+  const [picture, setPicture] = useState(null);
+
 
   const capture = React.useCallback(() => {
     const imageSrc = webcamRef.current.getScreenshot();
@@ -23,26 +24,27 @@ export default function WebcamCapture() {
     setPicture(imageSrc)
   }, [webcamRef]); 
 
-  // if there is a value for picture, return picture, if picture is empty/null, return camera
-  // if src={picture} = (!null)
-  //   return (<img src={picture} />) 
-
-  //       return <div onClick={()=> setShowCamera(!null)} />
-
+  
   return (
     <div className="camera">
-      <Webcam
+      {picture ? <img src={picture} 
+      className="screenshot"
+      /> : <Webcam
         mirrored={true}	
         audio={false}
         width={1080}
         ref={webcamRef}
         screenshotFormat="image/jpeg"
-        videoConstraints={videoConstraints}
-      />
-      <img src={picture} />
-
+        videoConstraints={videoConstraints}        
+      />}
+      
       <div className="footer">
-        <FiTrash2 className="trash-icon" size="small" />
+        <FiTrash2 
+          className="trash-icon" 
+          size="small" 
+          onClick={()=> setPicture(null)
+          }
+          />
 
         <FiCircle 
           className="take-picture-icon" 
@@ -50,7 +52,13 @@ export default function WebcamCapture() {
           onClick={capture} 
           />
 
-        <FiCheckCircle className="okay-icon" size="small" />
-    </div>
+        <FiCheckCircle 
+          className="okay-icon" 
+          size="small" 
+          onClick={()=> props.setResults(true)}
+          />
+
+      </div>
+      </div>
   );
 }

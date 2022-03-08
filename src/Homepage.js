@@ -8,6 +8,7 @@ import { FiCircle} from "react-icons/fi";
 import { FiTrash2} from "react-icons/fi";
 import { FiCheckCircle} from "react-icons/fi";
 import { FiSearch} from "react-icons/fi";
+import Results from "./Results";
 
 //this component is what the user sees when they first open the app, contains the header, 
 // screen, and footer
@@ -15,44 +16,7 @@ import { FiSearch} from "react-icons/fi";
 export default function Homepage() {
 
   const [text, setText] = useState("");
-
-// when the FiCircle icon is clicked, camera takes a screenshot
-// function capture () {
-//     getScreenshot({width: 1080, height: 560});
-// }
-
-// when the FiTrash2 icon is clicked, camera trashes the screenshot and returns to camera (original state)
-//function retake() {
-//  if FiTrash2.onClick
-//      WebcamCapture(null);
-
-// when the FiCheckCircle is clicked, user is navigated to the Result page
-//function select() {
-//  if FiCheckCircle.onClick
-//  const [page, setPage] = useState('Result')
-//}
-
-// when FiSearch is clicked, user is navigated to the Result page
-//function search() {
-//  if FiSearch.onClick
-//  const [page, setPage] = useState('Result')
-//}
-
-// navigation function
-//const [page, setPage] = useState('Homepage')
-//  return <main>
-//      <Navigation page={page} setPage={setPage} />
-//      {page==='Homepage' && <Homepage />}
-//      {page==='Result' && <Result />}
-//  </main>
-//  }
-//  function Navigation(props) {
-//  return <main>
-//      <div onClick={()=> props.setPage('Homepage')}>Homepage</div>
-//      <div onClick={()=> props.setPage('Result')}>Result</div>
-//  </main>
-//  }
-//}
+  const [results, setResults] = useState(false)
 
 return (
     <div className="App">
@@ -75,25 +39,9 @@ return (
               />
       </header>
 
-        <WebcamCapture/>
 
-        {/* <div className="footer">
+      {results ? <Results/> : <WebcamCapture setResults={setResults}/>}
 
-            <FiTrash2 className="trash-icon" size="small" />
-
-            <FiCircle 
-              className="take-picture-icon" 
-              size="small" 
-              //onClick=              
-              />
-
-
-            <FiCheckCircle className="okay-icon" size="small" />
-
-
-       
-            
-        </div> */}
 
     </div>
   );

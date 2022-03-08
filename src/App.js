@@ -1,7 +1,7 @@
 import "./App.css";
 import Homepage from "./Homepage";
-// import Result from ".Result";
-import { FiCheckCircle } from "react-icons/fi";
+import Results from "./Results";
+// import { FiCheckCircle } from "react-icons/fi";
 
 
   // questions for office hours:
